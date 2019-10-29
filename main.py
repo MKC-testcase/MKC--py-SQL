@@ -4,6 +4,12 @@
 
 import csv
 import sys
+import subprocess
+import git
+import time
+
+#this seems to be a completely useless class, will try to eliminate this just send to the
+#output file, deal with unraveling the package in the second portion of this project
 class array:
 	colNames = [] # this element should hold strings values of the column names if given
 	rowNames = [] # this element should hold strings values of the row names if given
@@ -40,6 +46,7 @@ if type == "1":
                 csv_reader = csv.reader(csv_file, delimiter= ',')
                 #this prints the output for the .csv file 
                 for row in csv_reader:
+                        rowData.append(row)
                         #this should be literally row by row
                         print(row)
 elif type == "2":
@@ -51,6 +58,13 @@ else:
 
 
 if type == "1":
+        #converting the data into 2d array
+        print('sending the data to a output file')
+        #opens the file and assigns it to outfile
+        with open('dataEntry.txt', 'w') as outfile: 
+                for entry in rowData:
+                        #writes to the file dataEntry.txt
+                        outfile.write("%s\n" % entry) 
         print('reached here')
 elif type == "2":
         #the lines below are just prints the contents of the csv file
@@ -61,6 +75,9 @@ elif type == "2":
                 data.append(row)
                 row = []
                 print(txt)
-                
-	
+outfile.close()
+
+#this should set gitcmd to the git repository from the path below
+gitcmd = git.cmd.Git(D:\Marcus\Python\dataProject\MKC--py-SQL)
+
 

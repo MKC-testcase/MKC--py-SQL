@@ -29,10 +29,9 @@ def run_ras()
     #    print("RELATED ERROR HERE")
     print("This section is still under construction")
 
-if __name__ == '__main__':
+while True:
     update()
     run_ras()
     time.sleep(36000) # for testing change from 10 hours to 5 mins(300)
     print(time.localtime())
     #line below should rerun the script
-    os.exec(__file__, sys.argv)
